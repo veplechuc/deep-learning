@@ -45,42 +45,42 @@ def display_sample(num):
     plt.show()
 
 
-# display_sample(1233)
+display_sample(59999)
 
 # set up CNN
 # setup a secueltial model
-model = Sequential()
-# first layer
-model.add(Conv2D(32, kernel_size=(3, 3), activation="relu", input_shape=input_shape))
-# 64 3x3 kernels
-model.add(Conv2D(64, (3, 3), activation="relu"))
-# reduce by taking max of each 2x2 block
-model.add(MaxPooling2D(pool_size=(2, 2)))
-# dropout to avoid overfitting
-model.add(Dropout(0.25))
-# flattern the result to one dimesion for passing into our final layer
-model.add(Flatten())
-# Hidden layer to learn with
-model.add(Dense(128, activation="relu"))
-model.add(Dropout(0.25))
-# categorization from 0-9
-model.add(Dense(10, activation="softmax"))
+# model = Sequential()
+# # first layer
+# model.add(Conv2D(32, kernel_size=(3, 3), activation="relu", input_shape=input_shape))
+# # 64 3x3 kernels
+# model.add(Conv2D(64, (3, 3), activation="relu"))
+# # reduce by taking max of each 2x2 block
+# model.add(MaxPooling2D(pool_size=(2, 2)))
+# # dropout to avoid overfitting
+# model.add(Dropout(0.25))
+# # flattern the result to one dimesion for passing into our final layer
+# model.add(Flatten())
+# # Hidden layer to learn with
+# model.add(Dense(128, activation="relu"))
+# model.add(Dropout(0.25))
+# # categorization from 0-9
+# model.add(Dense(10, activation="softmax"))
 
-print(model.summary())
+# print(model.summary())
 
-model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
+# model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-history = model.fit(
-    train_images,
-    train_labels,
-    batch_size=32,
-    epochs=10,
-    verbose=2,
-    validation_data=(test_images, tests_labels),
-)
+# history = model.fit(
+#     train_images,
+#     train_labels,
+#     batch_size=32,
+#     epochs=10,
+#     verbose=2,
+#     validation_data=(test_images, tests_labels),
+# )
 
-score = model.evaluate(test_images, tests_labels, verbose=0)
+# score = model.evaluate(test_images, tests_labels, verbose=0)
 
-print("Test loss->", score[0])
-print("Test accuracy->", score[1])
+# print("Test loss->", score[0])
+# print("Test accuracy->", score[1])
 
