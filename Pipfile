@@ -12,6 +12,7 @@ scikit-learn = "*"
 requests = "*"
 numpy = "*"
 tensorflow-gpu = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.6"
