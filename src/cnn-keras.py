@@ -45,7 +45,7 @@ def display_sample(num):
     plt.show()
 
 
-# display_sample(1233)
+# display_sample(59999)
 
 # set up CNN
 # setup a secueltial model
